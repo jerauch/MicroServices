@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="un-peu-de-feign-et-ribbon">Un peu de Feign et Ribbon</h1>
+<p>Dans l'article précédant nous avons vu comment créer très rapidement un microservice avec <em><strong>Spring Boot</strong></em>. Dans une architecture microservices, il est très fréquent qu'un service utilise un autre service.</p>
+<p>Nous allons maintenant implémenter un microservice qui va calculer le gain d'un pari et faire appel au microservice des cotes, et ensuite voir comment améliorer la communication entre les services et mettre en place un failover.</p>
+<p><img src="img/Croquis7.png" alt="App"></p>
+<p><em>Détail de notre API :</em></p>
+<p>GET http://localhost:8000/ms-resultat/foot/Paris/vs/Strasbourg/1/50</p>
+<p>En paramètre nous avons :</p>
+<ul>
+<li>Le match : Paris vs Strasbourg</li>
+<li>La mise : 1 / 2 ou N, c'est à dire 1 pour la victoire de l'équipe à domicile, 2 pour la victoire de l'équipe visiteur et N pour match nul</li>
+</ul>
+<p>Ce service va appeller le service de l'article précédant :</p>
+<p>GET http://localhost:8000/ms-paris-sportifs/foot/Paris/vs/Strasbourg</p>
+<p>Récupérer la cote :</p>
+<pre class="hljs"><code><div>{
+  id: <span class="hljs-number">4526</span>,
+  domicile: <span class="hljs-string">"Paris"</span>,
+  visiteur: <span class="hljs-string">"Strasbourg"</span>,
+  1:<span class="hljs-number">1.20</span>,
+  N:<span class="hljs-number">2.56</span>,
+  2:<span class="hljs-number">7</span>
+}
+</div></code></pre>
+<p>Et faire le calcul : On a misé 50 euro sur l'équipe à domicile, donc on va retourner 50 x 1.20 = 60.</p>
+<blockquote>
+<p>Bon ... j'avoue que mon exemple est très simple fonctionnement, mais l'objectif est de montrer comment un service peut utiliser un autre service.</p>
+</blockquote>
+<h2 id="cr%C3%A9ation-du-projet">Création du projet</h2>
+<p>Nous allons créer un microcomposant depuis https://start.spring.io/</p>
+<p>Si tu as suivi l'article précédant, tu devrais arriver à créer le projet comme un pro <img class="emoji" alt="wink" src="data:image/png;base64,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" /></p>
+<p>Sinon, voilà comment faire :</p>
+<p><img src="img/Croquis.png" alt="Initializr"></p>
+<p>A noter qu'on ajoute la dépendance <em><strong>Feign</strong></em>, mais on reviendra sur ce module dans quelques instants.</p>
+<p>On télécharge le fichier zip du projet, on l'importe dans son editeur favoris et let's code.</p>
+<h2 id="un-paris-en-java">Un Paris en java</h2>
+<p>Nous allons créer un objet qui va correspondre à la réponse notre web service, composé du nom des deux équipe, de la cote, le type de mise et le montant misé et le montant gagné (ou perdu ...). Il s'agit d'une classe standard, avec simplement un constructucteur :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> fr.parissportifs.paris;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Paris</span> </span>{
+	<span class="hljs-keyword">private</span> String domicile;
+	<span class="hljs-keyword">private</span> String visiteur;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> cote;
+	<span class="hljs-keyword">private</span> String paris;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> mise;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> gain;
+	
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Paris</span><span class="hljs-params">()</span> </span>{
+
+	}	
+	
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Paris</span><span class="hljs-params">(String domicile, String visiteur, <span class="hljs-keyword">double</span> cote, String paris, <span class="hljs-keyword">double</span> mise, <span class="hljs-keyword">double</span> gain)</span> </span>{
+		<span class="hljs-keyword">super</span>();
+		<span class="hljs-keyword">this</span>.domicile = domicile;
+		<span class="hljs-keyword">this</span>.visiteur = visiteur;
+		<span class="hljs-keyword">this</span>.cote = cote;
+		<span class="hljs-keyword">this</span>.paris = paris;
+		<span class="hljs-keyword">this</span>.mise = mise;
+		<span class="hljs-keyword">this</span>.gain = gain;
+	}
+    ...
+}
+</div></code></pre>
+<h2 id="controlleur-rest">Controlleur REST</h2>
+<p>Créons un controlleur REST :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> fr.parissportifs.paris;
+
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-keyword">import</span> org.springframework.http.ResponseEntity;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.PathVariable;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RestController;
+<span class="hljs-keyword">import</span> org.springframework.web.client.RestTemplate;
+
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParisController</span> </span>{
+
+	<span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"/ms-resultat/foot/{d}/vs/{v}/{typeParis}/{mise}"</span>)
+	<span class="hljs-function"><span class="hljs-keyword">public</span> Paris <span class="hljs-title">resultat</span><span class="hljs-params">(@PathVariable String d, @PathVariable String v, @PathVariable String typeParis, @PathVariable Double mise)</span> </span>{
+
+		<span class="hljs-comment">//----------------------------------//</span>
+		Map&lt;String, Object&gt; uriVariables = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+		uriVariables.put(<span class="hljs-string">"d"</span>, d);
+		uriVariables.put(<span class="hljs-string">"v"</span>, v);	
+    
+		ResponseEntity&lt;Cote&gt; responseCote = <span class="hljs-keyword">new</span> RestTemplate().getForEntity(
+				<span class="hljs-string">"http://localhost:8080/ms-paris-sportifs/foot/{d}/vs/{v}"</span>, Cote.class,
+				uriVariables);
+		
+		Cote cote = responseCote.getBody();
+		
+		<span class="hljs-comment">//----------------------------------// </span>
+		
+		Paris paris = <span class="hljs-keyword">new</span> Paris();
+		paris.setDomicile(d);
+		paris.setVisiteur(v);
+		paris.setMise(<span class="hljs-number">0</span>);
+		<span class="hljs-keyword">double</span> coteParis = <span class="hljs-number">0</span>;
+		<span class="hljs-keyword">switch</span>(typeParis) {
+			<span class="hljs-keyword">case</span> <span class="hljs-string">"1"</span> : 
+				coteParis = cote.getC1();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-string">"N"</span> : 
+				coteParis = cote.getCn();
+				<span class="hljs-keyword">break</span>;
+			<span class="hljs-keyword">case</span> <span class="hljs-string">"2"</span> : 
+				coteParis = cote.getC2();				
+		}
+
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Paris(d, v, coteParis, typeParis, mise, mise * coteParis);
+	}
+}
+</div></code></pre>
+<p>Comme nous l'avons déjà vu, nous utilisons l'annontation <em><strong>@RestContoller</strong></em> et <em><strong>@GetMapping</strong></em> pour définir notre service REST avec les 4 paramètres.
+La fonction se décompose en 2 :</p>
+<ul>
+<li>Dans un premier temps nous allons appeller le microservice existant</li>
+<li>Ensuite nous allons effectuer le traitement metier et renvoyer un objet Paris.</li>
+</ul>
+<p>Pour tester notre service nous allons devoir modifier son port. En effet, comme nous utilisons les deux services sur une même machine, on ne peut pas utiliser deux fois le même port.</p>
+<p>Dans le fichier application.properties, ajouter :</p>
+<blockquote>
+<p>server.port=8100</p>
+</blockquote>
+<p>Démarrer les deux microservices et valider le fonctionnement :</p>
+<p><img src="img/Croquis2.png" alt="WS"></p>
+<h1 id="feign">Feign</h1>
+<p><em><strong>Spring Boot</strong></em> propose une solution plus élégante pour consommer un service REST : L'utilisation d'un proxy <em><strong>Feign</strong></em></p>
+<p><img src="img/Croquis8.png" alt="WS"></p>
+<p><em><strong>Feign</strong></em> permet de créer une interface d'abstraction des appels entre les services. Son utilisation est très simple :</p>
+<p>Créer une nouvelle interface :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> fr.parissportifs.paris;
+
+<span class="hljs-keyword">import</span> org.springframework.cloud.openfeign.FeignClient;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.PathVariable;
+
+<span class="hljs-meta">@FeignClient</span>(name=<span class="hljs-string">"cote-service"</span>, url=<span class="hljs-string">"localhost:8080"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">CoteServiceProxy</span> </span>{
+  <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"/ms-paris-sportifs/foot/{d}/vs/{v}"</span>)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Cote <span class="hljs-title">retrieveExchangeValue</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">"d"</span>)</span> String d, @<span class="hljs-title">PathVariable</span><span class="hljs-params">(<span class="hljs-string">"v"</span>)</span> String v)</span>;
+}
+</div></code></pre>
+<p><em><strong>@FeignClient</strong></em> permet de définir le nom du proxy, et ensuite on définit une interface, les paramètres et rien de plus !</p>
+<p>On simplifie le code de notre controlleur en remplaçant l'appel du service Rest par :</p>
+<pre class="hljs"><code><div>		<span class="hljs-comment">//----------------------------------//</span>
+		Cote cote = coteService.getCote(d, v);	
+		<span class="hljs-comment">//----------------------------------//</span>
+</div></code></pre>
+<p>Avant il faut instancier le service :</p>
+<pre class="hljs"><code><div>	<span class="hljs-meta">@Autowired</span>
+	CoteServiceProxy coteService;
+</div></code></pre>
+<p>Voir le code complet dans mon github.</p>
+<p>Il reste à activer <em><strong>Feign</strong></em> dans notre application, dans le fichier <em>ParisApplication.java</em> avec <em><strong>@EnableFeignClients</strong></em></p>
+<pre class="hljs"><code><div><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableFeignClients</span> &lt;---- 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParisApplication</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		SpringApplication.run(ParisApplication.class, args);
+	}
+}
+</div></code></pre>
+<p>Quels sont les avantages à utiliser Feign ?</p>
+<p>Dans notre controleur l'appel au service est completement abstrait et se résume à un appel d'une fonction java, qui peut aussi être réutilisé ailleurs dans l'application.</p>
+<h1 id="load-balancing-et-fail-over">Load balancing et Fail Over</h1>
+<p>Nous avions vu que l'architecture microservice permettait de monter en charge facilement, et permet aussi de gérer le fail over. L'idée est que notre microservice de gestion des cotes soit distribuée ou répartie sur différentes instances. Surtout que pour l'instant l'adresse du service est codée dans l'application ce qui n'est pas une pratique.</p>
+<p>Nous allons utiliser <em><strong>Ribbon</strong></em> qui est un load balancer spécialisé dans les microservices.</p>
+<p>https://github.com/Netflix/ribbon</p>
+<p>Il faut commencer par modifier le fichier pom.xml et ajouter la dépence suivante :</p>
+<pre class="hljs"><code><div>		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+      		<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+      		<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-ribbon<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</div></code></pre>
+<p>Ensuite il faut activer <em><strong>Ribbon</strong></em> sur notre controlleur et supprimer l'adresse du service car nous allons configurer cette dernière dans Ribbon, bonne pratique de ne pas mettre d'adresse de service directement dans le code :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@FeignClient</span>(name=<span class="hljs-string">"cote-service"</span>)
+<span class="hljs-meta">@RibbonClient</span>(name=<span class="hljs-string">"cote-service"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">CoteServiceProxy</span> </span>{
+  <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"/ms-paris-sportifs/foot/{d}/vs/{v}"</span>)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Cote <span class="hljs-title">getCote</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">"d"</span>)</span> String d, @<span class="hljs-title">PathVariable</span><span class="hljs-params">(<span class="hljs-string">"v"</span>)</span> String v)</span>;
+}
+</div></code></pre>
+<p>Pour tester notre loadbalancer nous devons démarrer au moins deux fois notre microservice qui gère le Cotes. Voyons comment faire :</p>
+<p>Et dans le fichier application.properties on va définir l'adresse de nos services :</p>
+<blockquote>
+<p>coteWS.ribbon.listOfServers=localhost:8080,localhost:8081</p>
+</blockquote>
+<p>8080 est le port actuellement utilisé par le microservice, et nous allons déployer le second service sur le port 8081 en dupliquant la configuration existante et en passant le port en paramètre dans la JVM :</p>
+<p><img src="img/Croquis3.png" alt="WS"></p>
+<p>On va modifier notre objet Cote.java et son controlleur pour ajouter le port du serveur, ce qui nous permettra de voir quelle instance de notre service a généré la réponse. On ajoute une référence vers l'objet Environnement et on assigne le port :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CoteController</span> </span>{
+  
+  <span class="hljs-meta">@Autowired</span>
+  <span class="hljs-keyword">private</span> CoteRepository repository;
+  
+  <span class="hljs-meta">@Autowired</span>
+  <span class="hljs-keyword">private</span> Environment environment;
+  
+  <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"/ms-paris-sportifs/foot/{d}/vs/{v}"</span>)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Cote <span class="hljs-title">getCote</span>
+    <span class="hljs-params">(@PathVariable String d, @PathVariable String v)</span></span>{
+    
+		Cote cote = repository.findByDomicileAndVisiteur(d, v);
+			  
+		cote.setPort(Integer.parseInt(environment.getProperty(<span class="hljs-string">"local.server.port"</span>)));
+	  
+    <span class="hljs-keyword">return</span> cote;
+  }
+}
+</div></code></pre>
+<p>Et va ensuite récupérer le port dans le controleur des paris :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Paris(d, v, coteParis, typeParis, mise, mise * coteParis, cote.getPort());
+</div></code></pre>
+<blockquote>
+<p>PS : On ne récupère le port que pour valider l'effet démo et voir quel microservice nous a retourné la cote. Dans une vrai application, cela n'est vraiment pas nécéssaire.</p>
+</blockquote>
+<p>On démarre les deux instances du microservice des cotes puis celui des paris et on lance une requête :</p>
+<p><img src="img/Croquis4.png" alt="WS"></p>
+<p>C'est le premier microservice qui a répondu (port = 8080). Quand on relance une nouvelle requête :</p>
+<p><img src="img/Croquis5.png" alt="WS"></p>
+<p>On voit que c'est le second microservice qui répond (port = 8081). Notre load balancer va donc répartir les requêtes entre nos deux microservices.</p>
+<p>Qu'est ce qu'il se passe si on simule une panne sur un de nos deux microservices ?</p>
+<p><img src="img/Croquis6.png" alt="HS"></p>
+<p>Ribbon va se rendre compte que le service n'est plus disponible et va router les demandes uniquement sur le premier micro service. Notre load balancer / failover est opérationnel !</p>
+
+</body>
+</html>
