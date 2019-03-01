@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="eureka-naming-server">Eureka Naming Server</h1>
+<p>Dans les articles précédents nous avons abordé les microservices. Nous avons créé un microservice, nous avons modifié ce microservice pour qu'il consomme les données d'un autre microservice. Et nous avons vu comment faire monter en charge ce microservice et le rendre résilient et disponible.</p>
+<p>Nous avons utilisé RIBBON pour distribuer la charge entre les deux instances de notre service de cotes. Mais nous avons saisi en dur l'adresse du service dans le service 'Paris', ce qui veut dire que si on déplace le microservice des cotes ou si nous devons ajouter de nouvelles instances du service il faudra modifier le code du service Paris et le re-déployer, ce qui n'est pas très « devops friendly ».</p>
+<p>Heureusement les développeurs de Netflix ont pensé à tout, et ils nous proposent Eureka Naming Server pour résoudre ce problème.</p>
+<p>Eureka est un service base sur une API REST dont le rôle principal est trouver à la voler des instances de service et de repartir la charge entre les services. Eureka propose également un client Java - Eureka Client - qui permet de communiquer très facilement avec le serveur.</p>
+<h2 id="comment-cr%C3%A9er-un-serveur-eureka">Comment créer un serveur Eureka ?</h2>
+<p>Vous êtes maintenant habitué, avec Spring Boot c'est très simple. On va créer un nouveau projet sur https://start.spring.io/ :</p>
+<p>Choisir un nom de groupe, un nom pour l'artefact maven, n'oubliez pas d'inclure la dépendance &quot;Eureka Server&quot;.</p>
+<p><img src="img/1.png" alt="App"></p>
+<p>On télécharge le projet et on l'ouvre avec son IDE préféré :</p>
+<p><img src="img/2.png" alt="App"></p>
+<p>Il faut activer le Eureka dans notre projet, avec une annotation <em>@EnableEurekaServer</em> dans la classe de lancement :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> com.jerome.ws.eurekasrv;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableEurekaServer</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EurekaSrvApplication</span> </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+		SpringApplication.run(EurekaSrvApplication.class, args);
+	}
+
+}
+</div></code></pre>
+<p>Ensuite il faut définir le nom de l'application et le port utilisé par le serveur dans <strong>application.properties</strong> :</p>
+<pre class="hljs"><code><div>spring.application.name=betting-eureka-naming-server
+server.port=<span class="hljs-number">8761</span>
+eureka.client.register-with-eureka=<span class="hljs-keyword">false</span>
+eureka.client.fetch-registry=<span class="hljs-keyword">false</span>
+</div></code></pre>
+<p>On démarre le serveur comme nous avons fait pour les autres applications Spring Boot en lançant EurekaSrvApplication en tant qu'application Java.</p>
+<p>Une console web est disponible sur le port configuré ci dessus :</p>
+<p><img src="img/3.png" alt="App"></p>
+<h2 id="eureka-client">Eureka Client</h2>
+<p>Pour l'instant aucune instance de micro service n'est déclarée sur le serveur Eureka, nous allons modifier nos services pour qu'ils soient configurés par Eureka.</p>
+<p>Dans deux services, il faudra ajouter une dépendance vers le client Eureka dans le fichier pom.xml :</p>
+<pre class="hljs"><code><div>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</div></code></pre>
+<p>Puis on va définir dans les services à quelle adresse ils trouveront leur serveur Eureka, dans le fichier application.properties :</p>
+<pre class="hljs"><code><div>eureka.client.service-url.<span class="hljs-keyword">default</span>-zone=http:<span class="hljs-comment">//localhost:8761/eureka</span>
+</div></code></pre>
+<p>On démarre toutes les instances de nos microservices, pour rappel nous avons :</p>
+<ul>
+<li>Le service qui calcule les paris sur le port 8080</li>
+<li>Deux instances du service de gestion des cotes sur les ports 8100 et 8101</li>
+</ul>
+<p>On retourne sur la console Eureka et on voit que les services sont désormais enregistrés :</p>
+<p><img src="img/4.png" alt="App"></p>
+<p>Dans le service des Paris nous avons toujours l'adresse des services de gestion des cotes qui sont en dur dans un fichier de configuration. Comment utiliser Eureka ? Il suffit de supprimer la configuration Ribbon et comme par magie notre service va utiliser Eureka pour récupérer l'adresse des services.</p>
+<p>On supprime cette ligne dans la configuration du service des Paris :</p>
+<pre class="hljs"><code><div>cote-service.ribbon.listOfServers=localhost:<span class="hljs-number">8080</span>,localhost:<span class="hljs-number">8081</span>
+</div></code></pre>
+<p>Nous pouvons maintenant ajouter / supprimer des instances du service des 'Cotes' et le service des 'Paris' utilisera à chaque fois une instance différente du service des cotes. Si une instance s'arrête, la requête sera routée sue une autre instance.</p>
+<p>Pour finir ce tutoriel sur les micro service je vous propose comme exercice d'ajouter plusieurs instances du service des Cotes et de vérifier leur inscription dans Eureka. Puis créer un nouveau service (par exemple un service qui retourne l'URL des photos du logo des équipes de foot) et d'ajouter un appel de ce service dans le service des paris tout en utilisant les mécanismes vu dans les articles précédents.</p>
+<p>Nous avons vu sur cette petite série d'articles comment mettre en place une architecture micro service en utiliant Spring Boot et des outils comme Ribbon et Eureka. Il resterait à mettre en place un outil de gestion des logs commun à tous nos services et voir comment déployer les micro services sur AWS ou sous forme de containers Docker !</p>
+
+</body>
+</html>
